@@ -1,0 +1,7 @@
+dataset:
+  name: svhn
+  data_dir: datasets
+  batch_size: 128
+  num_workers: 4
+  val_ratio: 0.1
+  download: true

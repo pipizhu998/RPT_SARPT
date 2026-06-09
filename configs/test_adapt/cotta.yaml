@@ -1,0 +1,14 @@
+test_adapt:
+  method: cotta
+  cotta_episodic: false
+  cotta_lr: 0.001
+  cotta_steps: 1
+  cotta_optimizer: adam
+  cotta_weight_decay: 0.0
+  cotta_mt_alpha: 0.999
+  cotta_rst_m: 0.01
+  cotta_ap: 0.92
+  cotta_augmentation_views: 32
+  cotta_gaussian_std: 0.005
+  cotta_soft_augmentations: false
+  cotta_beta: 0.9

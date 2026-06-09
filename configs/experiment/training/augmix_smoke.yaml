@@ -1,0 +1,17 @@
+name: augmix_resnet18_smoke
+stage: training
+includes:
+  dataset: cifar10
+  model: resnet18
+  train_aug: augmix
+  test_adapt: none
+training:
+  out_dir: outputs/experiments/training
+  experiment_name: augmix_resnet18_smoke
+  epochs: 1
+  optimizer: sgd
+  scheduler: cosine
+  seed: 42
+  device: auto
+  max_train_batches: 20
+  max_val_batches: 5

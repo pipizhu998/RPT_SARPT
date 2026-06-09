@@ -1,0 +1,27 @@
+dataset:
+  name: mnistc
+  source_dataset: svhn
+  clean_dataset: mnist
+  clean_data_dir: datasets
+  clean_download: true
+  data_dir: datasets/mnist_c
+  batch_size: 128
+  num_workers: 2
+  corruptions:
+    - shot_noise
+    - impulse_noise
+    - glass_blur
+    - motion_blur
+    - shear
+    - scale
+    - rotate
+    - brightness
+    - translate
+    - stripe
+    - fog
+    - spatter
+    - dotted_line
+    - zigzag
+    - canny_edges
+  severity_levels:
+    - 1

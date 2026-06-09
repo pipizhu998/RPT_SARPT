@@ -1,0 +1,11 @@
+name: svhn_to_svhn_mixed_rpt_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_svhnc_mixed
+  model: resnet18
+  train_aug: none
+  test_adapt: rpt
+testing:
+  checkpoint: outputs/experiments/training/clean/svhn_baseline_resnet18/best.pt
+  out_dir: outputs/experiments/table/svhn_to_svhn_mixed
+  device: auto

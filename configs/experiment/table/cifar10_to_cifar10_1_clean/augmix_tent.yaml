@@ -1,0 +1,12 @@
+name: cifar10_to_cifar10_1_augmix_tent_resnet18
+stage: testing
+includes:
+  dataset: cifar10_1
+  model: resnet18
+  train_aug: augmix
+  test_adapt: tent
+testing:
+  checkpoint: outputs/experiments/training/augmix/augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/cifar10_to_cifar10_1_clean
+  evaluation_mode: clean
+  device: auto

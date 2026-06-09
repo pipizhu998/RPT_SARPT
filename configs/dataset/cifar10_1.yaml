@@ -1,0 +1,14 @@
+dataset:
+  name: cifar10_1
+  source_dataset: cifar10
+  clean_dataset: cifar10_1
+  clean_data_dir: datasets
+  clean_download: true
+  clean_shuffle: true
+  clean_seed: 0
+  data_dir: datasets/CIFAR-10.1
+  cifar10_1_data_dir: datasets/CIFAR-10.1
+  cifar10_1_version: v6
+  batch_size: 128
+  num_workers: 2
+  corruptions: []

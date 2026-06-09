@@ -1,0 +1,41 @@
+dataset:
+  name: cifar10_1_c
+  source_dataset: cifar10
+  clean_dataset: cifar10_1
+  clean_data_dir: datasets
+  clean_download: true
+  clean_shuffle: true
+  clean_seed: 0
+  data_dir: datasets/CIFAR-10.1-C-small
+  cifar10_1_data_dir: datasets/CIFAR-10.1
+  cifar10_1_version: v6
+  batch_size: 128
+  num_workers: 2
+  corruptions:
+    - gaussian_noise
+    - shot_noise
+    - impulse_noise
+    - defocus_blur
+    - glass_blur
+    - motion_blur
+    - zoom_blur
+    - snow
+    - frost
+    - fog
+    - brightness
+    - contrast
+    - elastic_transform
+    - pixelate
+    - jpeg_compression
+    - speckle_noise
+    - gaussian_blur
+    - spatter
+    - saturate
+  severity_levels:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  max_examples_per_condition: null
+  condition_seed: 0

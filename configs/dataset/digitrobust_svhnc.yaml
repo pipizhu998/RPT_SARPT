@@ -1,0 +1,21 @@
+dataset:
+  name: digitrobust_svhnc
+  source_dataset: svhn
+  clean_dataset: svhn
+  digitrobust_subset: svhn
+  data_dir: datasets/DigitRobust
+  batch_size: 128
+  num_workers: 2
+  corruptions:
+    - gaussian_noise
+    - shot_noise
+    - impulse_noise
+    - speckle_noise
+    - motion_blur
+    - defocus_blur
+    - brightness
+    - contrast
+    - rotate
+    - translate
+  severity_levels:
+    - 1

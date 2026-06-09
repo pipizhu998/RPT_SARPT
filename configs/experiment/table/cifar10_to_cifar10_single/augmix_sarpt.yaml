@@ -1,0 +1,12 @@
+name: cifar10_to_cifar10_augmix_sarpt_resnet18
+stage: testing
+includes:
+  dataset: cifar10c
+  model: resnet18
+  train_aug: augmix
+  test_adapt: sarpt
+testing:
+  checkpoint: outputs/experiments/training/augmix/augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/cifar10_to_cifar10_single
+  standard_include_clean: false
+  device: auto

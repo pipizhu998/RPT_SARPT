@@ -1,0 +1,11 @@
+name: cifar10_to_cifar10_mixed_adabn_resnet18
+stage: testing
+includes:
+  dataset: cifar10c_mixed
+  model: resnet18
+  train_aug: none
+  test_adapt: adabn
+testing:
+  checkpoint: outputs/experiments/training/clean/baseline_resnet18/best.pt
+  out_dir: outputs/experiments/table/cifar10_to_cifar10_mixed
+  device: auto

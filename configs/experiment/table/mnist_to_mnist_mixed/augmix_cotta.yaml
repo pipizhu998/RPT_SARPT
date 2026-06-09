@@ -1,0 +1,11 @@
+name: mnist_to_mnist_mixed_augmix_cotta_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_mnistc_source_mnist_mixed
+  model: resnet18
+  train_aug: augmix
+  test_adapt: cotta
+testing:
+  checkpoint: outputs/experiments/training/augmix/mnist_augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/mnist_to_mnist_mixed
+  device: auto

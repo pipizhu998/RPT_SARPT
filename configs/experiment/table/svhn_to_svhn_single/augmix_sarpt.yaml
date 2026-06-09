@@ -1,0 +1,12 @@
+name: svhn_to_svhn_augmix_sarpt_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_svhnc
+  model: resnet18
+  train_aug: augmix
+  test_adapt: sarpt
+testing:
+  checkpoint: outputs/experiments/training/augmix/svhn_augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/svhn_to_svhn_single
+  standard_include_clean: false
+  device: auto

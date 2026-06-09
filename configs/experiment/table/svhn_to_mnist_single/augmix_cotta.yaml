@@ -1,0 +1,12 @@
+name: svhn_to_mnist_augmix_cotta_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_mnistc
+  model: resnet18
+  train_aug: augmix
+  test_adapt: cotta
+testing:
+  checkpoint: outputs/experiments/training/augmix/svhn_augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/svhn_to_mnist_single
+  standard_include_clean: false
+  device: auto

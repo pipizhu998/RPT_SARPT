@@ -1,0 +1,10 @@
+test_adapt:
+  tent_episodic: false
+  tent_lr: 0.001
+  rpt_episodic: false
+  rpt_lr: 0.001
+  eata_episodic: false
+  eata_lr: 0.001
+test_adapt_by_method:
+  sarpt:
+    rpt_source_anchor_weight: 0.05

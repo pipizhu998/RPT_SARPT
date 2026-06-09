@@ -1,0 +1,15 @@
+name: mnist_augmix_resnet18
+stage: training
+includes:
+  dataset: mnist
+  model: resnet18
+  train_aug: augmix
+  test_adapt: none
+training:
+  out_dir: outputs/experiments/training
+  experiment_name: mnist_augmix_resnet18
+  epochs: 20
+  optimizer: sgd
+  scheduler: cosine
+  seed: 42
+  device: auto

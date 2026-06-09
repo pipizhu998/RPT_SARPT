@@ -1,0 +1,30 @@
+test_adapt:
+  method: sarpt
+  rpt_episodic: false
+  rpt_lr: 0.001
+  rpt_steps: 1
+  rpt_optimizer: adam
+  rpt_weight_decay: 0.0
+  rpt_jsd_weight: 12
+  rpt_source_anchor_weight: 0.05
+  rpt_augmix_severity: 3
+  rpt_augmix_width: 3
+  rpt_augmix_depth: -1
+  rpt_augmix_alpha: 1.0
+  rpt_augmix_all_ops: true
+  rpt_precompute_augmix: true
+  rpt_augmix_cache_dir: outputs/cache/ra_rpt_augmix
+  rpt_rebuild_augmix_cache: false
+  sweep_enabled: false
+  sweep_name: sarpt
+  rpt_lr_values:
+    - 0.0001
+    - 0.0005
+    - 0.001
+  rpt_jsd_weight_values:
+    - 0.1
+  rpt_source_anchor_weight_values:
+    - 0.01
+    - 0.05
+    - 0.1
+    - 0.2

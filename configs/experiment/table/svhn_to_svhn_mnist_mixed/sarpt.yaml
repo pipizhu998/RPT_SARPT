@@ -1,0 +1,11 @@
+name: svhn_to_svhn_mnist_mixed_sarpt_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_svhnc_mnistc_mixed
+  model: resnet18
+  train_aug: none
+  test_adapt: sarpt
+testing:
+  checkpoint: outputs/experiments/training/clean/svhn_baseline_resnet18/best.pt
+  out_dir: outputs/experiments/table/svhn_to_svhn_mnist_mixed
+  device: auto

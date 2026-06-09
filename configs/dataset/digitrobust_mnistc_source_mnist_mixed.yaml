@@ -1,0 +1,25 @@
+dataset:
+  name: digitrobust_mnistc
+  source_dataset: mnist
+  clean_dataset: mnist
+  digitrobust_subset: mnist
+  data_dir: datasets/DigitRobust
+  batch_size: 128
+  num_workers: 2
+  evaluation_mode: mixed
+  mixed_seed: 0
+  mixed_max_examples: 30000
+  mixed_include_clean: false
+  corruptions:
+    - gaussian_noise
+    - shot_noise
+    - impulse_noise
+    - speckle_noise
+    - motion_blur
+    - defocus_blur
+    - brightness
+    - contrast
+    - rotate
+    - translate
+  severity_levels:
+    - 1

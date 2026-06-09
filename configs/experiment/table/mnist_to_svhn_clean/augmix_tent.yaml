@@ -1,0 +1,12 @@
+name: mnist_to_svhn_augmix_tent_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_svhnc_source_mnist
+  model: resnet18
+  train_aug: augmix
+  test_adapt: tent
+testing:
+  checkpoint: outputs/experiments/training/augmix/mnist_augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/mnist_to_svhn_clean
+  evaluation_mode: clean
+  device: auto

@@ -1,0 +1,12 @@
+test_adapt:
+  method: eata
+  eata_episodic: false
+  eata_lr: 0.001
+  eata_steps: 1
+  eata_optimizer: sgd
+  eata_weight_decay: 0.0
+  eata_e_margin: 0.9210340371976183
+  eata_d_margin: 0.05
+  eata_fisher_size: 2000
+  eata_fisher_alpha: 2000.0
+  eata_fisher_clip_by_norm: null

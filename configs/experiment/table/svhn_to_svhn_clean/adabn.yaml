@@ -1,0 +1,12 @@
+name: svhn_to_svhn_adabn_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_svhnc
+  model: resnet18
+  train_aug: none
+  test_adapt: adabn
+testing:
+  checkpoint: outputs/experiments/training/clean/svhn_baseline_resnet18/best.pt
+  out_dir: outputs/experiments/table/svhn_to_svhn_clean
+  evaluation_mode: clean
+  device: auto

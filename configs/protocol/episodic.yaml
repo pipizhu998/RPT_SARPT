@@ -1,0 +1,7 @@
+test_adapt:
+  tent_episodic: true
+  tent_lr: 0.005
+  rpt_episodic: true
+  rpt_lr: 0.005
+  eata_episodic: true
+  eata_lr: 0.005

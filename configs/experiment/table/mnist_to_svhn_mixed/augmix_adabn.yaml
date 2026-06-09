@@ -1,0 +1,11 @@
+name: mnist_to_svhn_mixed_augmix_adabn_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_svhnc_source_mnist_mixed
+  model: resnet18
+  train_aug: augmix
+  test_adapt: adabn
+testing:
+  checkpoint: outputs/experiments/training/augmix/mnist_augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/mnist_to_svhn_mixed
+  device: auto

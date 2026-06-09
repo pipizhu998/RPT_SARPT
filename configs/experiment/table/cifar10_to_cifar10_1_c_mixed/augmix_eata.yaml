@@ -1,0 +1,11 @@
+name: cifar10_to_cifar10_1_c_mixed_augmix_eata_resnet18
+stage: testing
+includes:
+  dataset: cifar10_1_c_mixed
+  model: resnet18
+  train_aug: augmix
+  test_adapt: eata
+testing:
+  checkpoint: outputs/experiments/training/augmix/augmix_resnet18/best.pt
+  out_dir: outputs/experiments/table/cifar10_to_cifar10_1_c_mixed
+  device: auto

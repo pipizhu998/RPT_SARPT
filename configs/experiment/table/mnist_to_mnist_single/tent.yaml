@@ -1,0 +1,12 @@
+name: mnist_to_mnist_tent_resnet18
+stage: testing
+includes:
+  dataset: digitrobust_mnistc_source_mnist
+  model: resnet18
+  train_aug: none
+  test_adapt: tent
+testing:
+  checkpoint: outputs/experiments/training/clean/mnist_baseline_resnet18/best.pt
+  out_dir: outputs/experiments/table/mnist_to_mnist_single
+  standard_include_clean: false
+  device: auto

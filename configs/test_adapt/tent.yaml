@@ -1,0 +1,8 @@
+test_adapt:
+  method: tent
+  tent_episodic: false
+  tent_lr: 0.001
+  tent_steps: 1
+  tent_optimizer: adam
+  tent_weight_decay: 0.0
+

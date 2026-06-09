@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.tmp/
+datasets/
+outputs/
+*.gz
+*.part
+tools/rclone_token.json
+.idea/workspace.xml
