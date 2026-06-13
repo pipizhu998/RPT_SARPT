@@ -19,7 +19,6 @@ project's proposed methods.
 ## Setup
 
 ```bash
-cd /root/wksp/my_gp_code
 pip install -r requirements.txt
 ```
 
