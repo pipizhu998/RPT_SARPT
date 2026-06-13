@@ -43,13 +43,53 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+require_command() {
+  if ! command -v "$1" >/dev/null 2>&1; then
+    echo "Missing required command: $1" >&2
+    exit 1
+  fi
+}
+
+download_cifar10_1() {
+  local data_dir="datasets/CIFAR-10.1"
+  local base_url="https://github.com/modestyachts/CIFAR-10.1/raw/master/datasets"
+  local file
+  require_command curl
+  mkdir -p "${data_dir}"
+  for file in cifar10.1_v6_data.npy cifar10.1_v6_labels.npy; do
+    if [[ ! -s "${data_dir}/${file}" ]]; then
+      echo "Downloading CIFAR-10.1 ${file}"
+      rm -f "${data_dir}/${file}.part"
+      curl -L --fail --retry 3 --connect-timeout 20 \
+        -o "${data_dir}/${file}.part" \
+        "${base_url}/${file}"
+      mv "${data_dir}/${file}.part" "${data_dir}/${file}"
+    fi
+  done
+}
+
+ensure_paper_datasets() {
+  if [[ ! -d datasets/DigitRobust ]]; then
+    echo "Missing datasets/DigitRobust; downloading it now."
+    bash tools/download_digitrobust.sh
+  fi
+
+  if [[ ! -s datasets/CIFAR-10.1/cifar10.1_v6_data.npy \
+    || ! -s datasets/CIFAR-10.1/cifar10.1_v6_labels.npy ]]; then
+    echo "Missing CIFAR-10.1 v6 files; downloading them now."
+    download_cifar10_1
+  fi
+
+  if [[ ! -d datasets/CIFAR-10.1-C-small ]]; then
+    echo "Missing datasets/CIFAR-10.1-C-small; downloading it now."
+    bash tools/download_cifar10_1_c.sh
+  fi
+}
+
 preflight() {
   local missing=()
   local path
   for path in \
-    datasets/DigitRobust \
-    datasets/CIFAR-10.1 \
-    datasets/CIFAR-10.1-C-small \
     outputs/experiments/training/clean/baseline_resnet18/best.pt \
     outputs/experiments/training/augmix/augmix_resnet18/best.pt \
     outputs/experiments/training/clean/svhn_baseline_resnet18/best.pt \
@@ -83,6 +123,7 @@ run_group() {
 }
 
 if [[ ${#dry_run[@]} -eq 0 ]]; then
+  ensure_paper_datasets
   preflight
 fi
 

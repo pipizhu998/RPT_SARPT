@@ -1,6 +1,7 @@
 # Robustness-Preserving Test-Time Adaptation
 
-This repository contains the code for the paper project on preserving corruption robustness under domain shift.
+This repository contains the code for a paper project on preserving corruption
+robustness under domain shift.
 
 ## Documentation
 
@@ -10,16 +11,22 @@ This repository contains the code for the paper project on preserving corruption
 ## Our Method
 
 **RPT and SARPT are the methods proposed and developed by our group for this
-project.** Their implementation is kept in `rpt_sarpt/`.
+project.** Their implementations are in `rpt_sarpt/`.
 
 AugMix, AdaBN, TENT, EATA, and CoTTA are comparison methods. Their
-implementations are grouped under `baseline/` to distinguish established baselines from the
-project's proposed methods.
+implementations are grouped under `baseline/` to distinguish established
+baselines from the project's proposed methods.
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
+```
+
+Test environment:
+
+```text
+Python 3.13 + cu12.8
 ```
 
 ## Download Results and Datasets
@@ -32,32 +39,28 @@ Download pretrained checkpoints and experiment results:
 bash tools/download_outputs.sh
 ```
 
-This extracts files under:
-
-```text
-outputs/
-```
-
-Download the required custom datasets:
+The paper-table runner downloads missing custom datasets automatically. You can
+also download them manually:
 
 ```bash
 bash tools/download_digitrobust.sh
 bash tools/download_cifar10_1_c.sh
 ```
 
-These extract files under:
+## Paper Table Reproduction Commands
 
-```text
-datasets/DigitRobust/
-datasets/CIFAR-10.1-C-small/
+To reproduce every paper table with five seeds, run the protocol-aware runner
+from the repository root:
+
+```bash
+bash tools/run_paper_tables.sh
 ```
 
-CIFAR-10-C, MNIST-C, CIFAR-10.1, and torchvision datasets are handled by their
-data loaders when needed.
+For more details, see `RUN_EXPERIMENTS.md`.
 
 ## Main Commands
 
-Train or evaluate experiments from YAML configs:
+Train or evaluate experiments from YAML configuration files:
 
 ```bash
 python -m entry_point.run_experiment <config.yaml>

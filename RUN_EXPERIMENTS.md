@@ -1,19 +1,15 @@
 # Paper Table Reproduction Commands
 
-Run from the repository root:
-
-```bash
-cd /root/wksp/my_gp_code
-```
-
-To reproduce every paper table with five seeds, use the protocol-aware runner:
+To reproduce every paper table with five seeds, run the protocol-aware runner
+from the repository root:
 
 ```bash
 bash tools/run_paper_tables.sh
 ```
 
 This script also runs `python -m analysis.analyze_results_two` automatically at
-the end.
+the end. If required datasets are missing, it downloads them before the
+preflight checkpoint check.
 
 If checkpoints are missing, download the prepared outputs first. The downloaded
 outputs include the pretrained checkpoints used by the table configs:

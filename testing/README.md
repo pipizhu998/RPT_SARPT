@@ -25,5 +25,4 @@ Coverage includes:
 - `test_evaluation_utilities.py`: output paths, cache keys, and recorders.
 - `test_analysis_utilities.py`: result parsing, aggregation, and analysis helpers.
 
-The tests expect all dependencies from `requirements.txt`, including SciPy, to
-be installed. 
+The tests expect all dependencies from `requirements.txt` to be installed.

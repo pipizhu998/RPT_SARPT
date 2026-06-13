@@ -4,8 +4,10 @@ __pycache__/
 *.pyd
 .pytest_cache/
 .tmp/
-datasets/
-outputs/
+datasets/*
+!datasets/.gitkeep
+outputs/*
+!outputs/.gitkeep
 *.gz
 *.part
 tools/rclone_token.json
